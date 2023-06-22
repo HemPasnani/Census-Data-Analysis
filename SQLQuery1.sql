@@ -87,10 +87,6 @@ group by d.state;
 
 
 
---output top 3 districts with highest literacy rate
-select * from
-(select Literacy , State	, District , rank() over(partition by state order by Literacy) as "rank" from [Project 1]..Data1)a
-where "rank" in (1,2,3) order by state
 
 
 
